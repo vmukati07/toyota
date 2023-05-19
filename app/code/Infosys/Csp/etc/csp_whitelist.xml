@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @package     Infosys/Csp
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+-->
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="script-src">
+            <values>
+                <value id="newrelic-scripts" type="host">https://js-agent.newrelic.com</value>
+                <value id="newrelic-bam" type="host">https://bam.nr-data.net</value>
+            </values>
+        </policy>
+        <policy id="connect-src">
+            <values>
+                <value id="newrelic-bam" type="host">https://bam.nr-data.net</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="ws-spad-external" type="host">ws-spad.external.toyota.com</value>
+                <value id="eparts-images" type="host">eparts-images.toyota.com</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist> 

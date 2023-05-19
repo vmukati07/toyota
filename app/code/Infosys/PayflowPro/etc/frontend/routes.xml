@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/PayflowPro
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="paypal" frontName="paypal">
+            <module name="Infosys_PayflowPro" />
+        </route>
+    </router>
+</config>

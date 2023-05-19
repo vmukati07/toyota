@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/DealerChanges
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Magento_Sales::sales" title="Sales" translate="title" sortOrder="20">
+					<resource id="Magento_Sales::sales_operation" title="Operations" translate="title" sortOrder="10">
+						<resource id="Magento_Sales::sales_order" title="Orders" translate="title" sortOrder="10">
+							<resource id="Magento_Integration::config_signifyd" title="Signifyd Decision Link" />
+							<resource id="Infosys_DealerChanges::display_order_status" title="Display Order Status" />
+						</resource>
+					</resource>
+				</resource>
+				<resource id="Magento_Backend::dashboard" title="Dashboard" translate="title" sortOrder="10">
+					<resource id="Infosys_DealerChanges::view_dashboard_advanced_reporting" title="Advanced Reporting" />
+					<resource id="Infosys_DealerChanges::view_dashboard_fastly" title="Fastly Tab" />
+					<resource id="Infosys_DealerChanges::view_dashboard_yotpo" title="Yotpo Reviews Tab" />
+					<resource id="Infosys_DealerChanges::view_dashboard_customers" title="Customers Tab" />
+					<resource id="Infosys_DealerChanges::view_dashboard_new_customers" title="New Customers Tab" />
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

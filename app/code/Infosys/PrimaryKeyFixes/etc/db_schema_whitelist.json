@@ -1,0 +1,223 @@
+{
+    "catalog_product_entity_decimal": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_varchar": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_text": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_gallery": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_datetime": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_media_gallery_value_video": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_link_attribute_decimal": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_media_gallery": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_bundle_option_value": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_int": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_media_gallery_value_to_entity": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_link_attribute_int": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_media_gallery_value": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_link_attribute_varchar": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_super_attribute_label": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_product_entity_tier_price": {
+        "column": {
+            "value_id": true
+        }
+    },
+    "catalog_category_product_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "vehicle_indexer_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "catalogrule_product_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "targetrule_product_rule_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "targetrule_rule_product_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "inventory_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "product_vehicle_facets_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "catalog_product_price_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "salesrule_rule_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "cataloginventory_stock_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "catalog_product_attribute_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "catalogrule_rule_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "customer_dummy_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "product_vehicle_fitment_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "design_config_dummy_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "catalogsearch_fulltext_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "catalog_product_category_cl": {
+        "column": {
+            "version_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mview_state": {
+        "column": {
+            "version_id": true
+        }
+    }
+}

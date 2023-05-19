@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   Infosys/Reports
+ * @version   1.0.0
+ * @author    Infosys Limited
+ * @copyright Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="reports" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="70" translate="label">
+            <label>Reports</label>
+            <tab>toyota</tab>
+            <resource>Infosys_Reports::reports</resource>
+            <group id="links" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Report Links</label>
+                <field id="mbi_login" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" type="text">
+                    <label>Sales Performance (MBI)</label>
+                </field>
+                <field id="web_analytics" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" type="text">
+                    <label>Web Analytics (Adobe)</label>
+                </field>                
+            </group>     
+        </section>
+    </system>
+</config> 

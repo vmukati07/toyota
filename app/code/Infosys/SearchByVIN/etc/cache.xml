@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/SearchByVIN
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Cache/etc/cache.xsd">
+    <type name="vis_cache" translate="label,description" instance="Infosys\SearchByVIN\Model\Cache\SearchbyVinCache">
+        <label>VIS Cache</label>
+        <description>Response cached from VIS api call</description>
+    </type>
+</config>

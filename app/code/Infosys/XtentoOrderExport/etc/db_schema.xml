@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/XtentoOrderExport
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+   <table name="xtento_orderexport_destination" resource="default" engine="innodb" comment="Xtento_OrderExport Destination table">
+      <column xsi:type="smallint" name="encrypt_file" default="0"  nullable="false"  comment="Encrypt File" />
+      <column xsi:type="varchar" name="encryption_protocol" nullable="false" length="255" comment="Encryption Protocol" />
+      <column xsi:type="text" name="enc_public_key" nullable="false"  comment="Public Key" />
+   </table>
+</schema>

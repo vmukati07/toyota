@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/DeliveryFee
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2022. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugins -->
+    <type name="Magento\Sales\Model\Order\CreditmemoFactory">
+        <plugin name="attach_delivery_fee_from_data"
+                type="Infosys\DeliveryFee\Plugin\CreditMemoFactory" />
+    </type>
+
+    <!-- Loggers and Handlers -->
+    <virtualType name="Infosys\DeliveryFee\Logger\DeliveryFeeLoggerHandler"
+                 type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/Infosys_DeliveryFee.log</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Infosys\DeliveryFee\Logger\DeliveryFeeLogger"
+                 type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Infosys\DeliveryFee\Logger\DeliveryFeeLoggerHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Custom logging injections -->
+    <type name="Infosys\DeliveryFee\Model\Total\DeliveryFeeCharge">
+        <arguments>
+            <argument name="logger" xsi:type="object">Infosys\DeliveryFee\Logger\DeliveryFeeLogger</argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+ <!--
+/**
+ * @package     Infosys/SignifydFingerprintCart
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Triggering an automatic email to customer when an order is canceled by signifyd -->
+    <type name="Signifyd\Connect\Helper\OrderHelper">
+        <plugin name="notify_customer_email" type="Infosys\SignifydFingerprintCart\Plugin\OrderHelper" sortOrder="1"/>
+    </type>
+    <preference for="Signifyd\Connect\Controller\Webhooks\Index" type="Infosys\SignifydFingerprintCart\Controller\Webhooks\Index" />
+</config>

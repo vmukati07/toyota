@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   Infosys/XtentoProductExport
+ * @version   1.0.0
+ * @author    Infosys Limited
+ * @copyright Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="xtento_productexport_replace_filename_variables_before">
+        <observer name="set_google_feed_filename_variables" instance="Infosys\XtentoProductExport\Observer\FilenameCustomVariables"/>
+    </event>
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   Infosys/DealerChanges
+ * @version   1.0.0
+ * @author    Infosys Limited
+ * @copyright Copyright © 2021. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="backend_auth_user_login_success">
+        <observer name="backend_auth_user_login_success_observer" instance="Infosys\DealerChanges\Observer\BackendAuthObserver" />
+    </event>
+</config>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/DealerChanges
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!-- Included the below custom CSS to hide the Status dropdown in View Order(Admin Panel)   -->
+    <head>
+        <css src="Infosys_DealerChanges::css/hide_order_status.css"/>
+    </head>   
+    <!-- Display the Status dropdown in View Order(Admin Panel), only if the login user has respective ACL permission -->
+    <referenceContainer name="header">
+        <block aclResource="Infosys_DealerChanges::display_order_status"
+                template="Infosys_DealerChanges::display_order_status.phtml"/>
+    </referenceContainer>
+</page>

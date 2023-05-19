@@ -1,0 +1,282 @@
+<!--
+/**
+ * @package     Infosys_XtentoPdfCustomizer
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+-->
+<!--@vars {
+"var formattedBillingAddress|raw":"Billing Address",
+"var comment|escape|nl2br":"Credit Memo Comment",
+"var creditmemo.increment_id":"Credit Memo Id",
+"var order_data.customer_name":"Guest Customer Name (Billing)",
+"var order.increment_id":"Order Id",
+"var payment_html|raw":"Payment Details",
+"var formattedShippingAddress|raw":"Shipping Address",
+"var order.shipping_description":"Shipping Description",
+"var store.frontend_name":"Store Frontend Name",
+"var store_information_if.phone":"Store Phone",
+"var order.getIsNotVirtual()":"Not Virtual",
+"var item.vin_number":"Item VIN",
+"var total.is_grand_total":"Grand Total",
+"var total.is_tax":"Tax",
+"var logo_url":"Logo Url",
+"var formatted_order.created_at":"Created At",
+"var formatted_order.grand_total":"Formatted Grand Total",
+"var order.getPaymentMethodTitle()":"Payment Method Title",
+"var order.getShippingDescription()":"Payment Method Description",
+"var order_item_product.thumbnail_image_html":"Thumbnail Html",
+"var item.name":"Item Name",
+"var item.sku":"Sku",
+"var formatted_item.fitment_notice":"Fitment Notice",
+"var formatted_order_item.vehicle_name":"Vehicle Name",
+"var formatted_item.vin_number":"Vin Number",
+"var formatted_item.price_incl_tax":"Price Incl Tax",
+"var formatted_item.qty":"Item Qty",
+"var formatted_item.tax_amount":"Tax Amount",
+"var total.label":"Lable",
+"var total.tax_percent":"Tax Percent",
+"var total_formatted.amount":"Total Amount",
+"var formatted_item.row_total_incl_tax":"Row Total Incl Tax",
+"var order":"Order",
+"var order_data.is_not_virtual":"Order Type",
+"var order_id": "Order DB Id",
+"var order.customer_firstname": "Customer Firstname",
+"var order.customer_lastname": "Customer Lastname",
+"var shipping.telephone": "Telephone",
+"var order.customer_email": "Customer Email",
+"var fitment_method": "Fitment Method"
+} @-->
+##header_start##
+<!-- configuration: setAutoTopMargin="stretch" -->
+<div class="pdf-holder">
+    <header>
+        <div class="logo-holder">
+            <img src="{{var logo_url}}" style="max-width: 150px; max-height: 100px;">
+            <div class="main-info">
+                <div class="order-number">
+                    <table borderspace="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td class="order-number-item">
+                                    <div><b>{{trans "Date: "}}</b>{{var formatted_order.created_at}}</div>
+                                </td>
+                                <td class="order-number-item">
+                                    <div><b>{{trans "Grand Total: "}}</b>{{var formatted_order.grand_total}}</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="clear"></div>
+                </div>
+                <!-- /.order-number -->
+                <div class="clear"></div>
+            </div>
+            <!-- /.main-info -->
+        </div>
+        <!-- /.logo-holder -->
+
+        <div class="company-info">
+            <h2>{{trans "Order"}} #<strong>{{var order.increment_id}}</strong></h2>
+            <h3>Customer Information</h3>
+            <div class="icon-row">
+                <table borderspace="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{var order.customer_firstname}} {{var order.customer_lastname}}
+                            </td>
+                            <td class="icon">
+                                &nbsp;&#xf007;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="icon-row">
+                <table borderspace="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{var shipping.telephone}}
+                            </td>
+                            <td class="icon">
+                                &nbsp;&#xf095;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="icon-row">
+                <table borderspace="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{var order.customer_email}}
+                            </td>
+                            <td class="icon">
+                                &nbsp;&#xf0e0;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--<div class="clean-row">
+                {{trans "VAT Number"}}: <strong>{{config path="general/store_information/merchant_vat_number"}}</strong>
+            </div>-->
+        </div>
+        <!-- /.company-info -->
+    </header>
+</div>
+##header_end## ##body_start##
+<div class="pdf-holder">
+    <div class="info-boxes">
+        <div class="info-box">
+            <div class="on-left">
+                <div class="heading">{{trans "Billing Address"}}</div>
+                <div class="info-box-cnt">
+                    <div class="address">
+                        {{var formattedBillingAddress|raw}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.info-box -->
+
+        <div class="info-box">
+            <div class="on-right">
+                <div class="heading">{{trans "Shipping Address"}}</div>
+                <div class="info-box-cnt">
+                    <div class="address">
+                        {{var formattedShippingAddress|raw}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.info-box -->
+
+        <div class="clear"></div>
+    </div>
+    <!-- /.info-boxes -->
+
+    <div class="info-boxes">
+        <div class="info-box">
+            <div class="on-left">
+                <div class="heading">{{trans "Payment Method"}}</div>
+                <div class="info-box-cnt">
+                    <div class="address">
+                        <strong>{{var order.getPaymentMethodTitle()}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.info-box -->
+
+        {{depend order.getIsNotVirtual()}}
+        <div class="info-box">
+            <div class="on-right">
+                <div class="heading">{{trans "Shipping Method"}}</div>
+                <div class="info-box-cnt">
+                    <div class="address">
+                        <strong>{{var order.getShippingDescription()}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.info-box -->
+        {{/depend}}
+
+        <div class="clear"></div>
+    </div>
+    <!-- /.info-boxes -->
+
+    <div class="table-holder">
+        <table width="100%" borderspace="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="tleft" colspan="2">{{trans "Product"}}</th>
+                    <th class="tleft">{{trans "Fitment"}}</th>
+                    <th class="tleft">{{trans "Fitment Method"}}</th>
+                    <th width="70">{{trans "Price"}}</th>
+                    <th width="70">{{trans "Qty"}}</th>
+                    <th width="70">{{trans "Tax"}}</th>
+                    <th width="70">{{trans "Row Total"}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                ##items_start##
+                <tr>
+                    <td class="info" colspan="2">
+                        <h4>{{var item.name}}</h4>
+                        <div class="catalog-number">{{trans "SKU"}}: {{var item.sku}}</div>
+                    </td>
+                    <td class="tleft">
+                        {{if formatted_order_item.vehicle_name}} <strong>Exact Fit</strong> for your {{var formatted_order_item.vehicle_name}} {{else}} Not Provided {{/if}}
+                    </td>
+                    <td class="tleft">
+                        {{var fitment_method}}
+                    </td>
+                    <td>
+                        {{var formatted_item.price_incl_tax}}
+                    </td>
+                    <td>
+                        {{var formatted_item.qty}}
+                    </td>
+                    <td>
+                        {{var formatted_item.tax_amount}}
+                    </td>
+                    <td>
+                        <strong>{{var formatted_item.row_total_incl_tax}}</strong>
+                    </td>
+                </tr>
+                ##items_end##
+            </tbody>
+            <tfoot>
+                ##totals_start##
+                <tr>
+                    <td colspan="5"></td>
+                    <td colspan="2" class="label">
+                        {{depend total.is_grand_total}}
+                        <strong>
+                                {{/depend}}
+                                {{var total.label}} 
+                                {{depend total.is_tax}}
+                                ({{var total.tax_percent}})
+                                {{/depend}}
+                                {{depend total.is_grand_total}}
+                            </strong> {{/depend}}
+                    </td>
+                    <td class="value {{depend total.is_grand_total}}final{{/depend}}">
+                        <strong>{{var total_formatted.amount}}</strong>
+                    </td>
+                </tr>
+                ##totals_end##
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.table-holder -->
+</div>
+##body_end## ##footer_start##
+<div class="pdf-holder">
+    <footer>
+        <br><br>
+        <div class="table-cnt">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <strong>{{config path="general/store_information/name"}}</strong><br> {{config path="general/store_information/street_line1"}}<br> {{config path="general/store_information/city}}, {{config path="general/store_information/region_id"}}
+                        {{config path="general/store_information/postcode}}
+                    </td>
+                    <td>
+                        {{trans "Telephone"}}: {{config path="general/store_information/phone"}}<br> {{trans "E-Mail"}}: {{config path="general/store_information/store_email"}}<br> {{trans "Website"}}: <a href='{{config path="aem_general_config/general/aem_domain"}}'>{{config path="aem_general_config/general/aem_domain"}}</a>
+                    </td>
+                    <td class="small">
+                        <h2>{{trans "Thank you for your business!"}}</h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </footer>
+</div>
+##footer_end##

@@ -1,0 +1,83 @@
+.order-pending {
+    background: #fff94752 none repeat scroll 0 0;
+    border: 1px solid #974F0C;
+    color: #974F0C;
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 0 3px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.order-processing {
+    background: #00b8ff1f none repeat scroll 0 0;
+    border: 1px solid #006bb4;
+    color: #006bb4;
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 0 7px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.order-canceled {
+    background: #ff1a1a33 none repeat scroll 0 0;
+    border: 1px solid #b40000;
+    color: #b40000;
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 0 7px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.order-complete {
+    background: #93df0647 none repeat scroll 0 0;
+    border: 1px solid #5b8116;
+    color: #5b8116;
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 0 7px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.order-closed {
+    background: #93df0647 none repeat scroll 0 0;
+    border: 1px solid #5b8116;
+    color: #5b8116;
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 0 7px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.order-holded {
+    background: #c3c3c3ba none repeat scroll 0 0;
+    border: 1px solid #686565;
+    color: #686565;
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 0 3px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}

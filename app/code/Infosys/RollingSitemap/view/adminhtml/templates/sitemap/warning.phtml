@@ -1,0 +1,10 @@
+<?php
+/** @var \Infosys\RollingSitemap\ViewModel\Sitemap\Warning $viewModel */
+$viewModel = $block->getData('viewModel');
+?>
+
+<div class="page-main-actions" >
+    <p>The module <b>Infosys_RollingSitemap</b> is enabled.</p>
+    <p>The next generation will occur for store code <b><?= $viewModel->getNextStoreCode() ?></b>.</p>
+    <p>Configuration can be found <a href="<?= $viewModel->getConfigurationLink() ?>">here</a>, in the <i><b>Generation Settings</b></i> section.</p>
+</div>

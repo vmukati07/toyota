@@ -1,0 +1,58 @@
+<?php
+/**
+ * @package     Infosys/OrderEmailTemplates
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright � 2021. All Rights Reserved.
+ */
+?>
+<?php /* @var \Magento\Framework\View\Element\Template $block */ ?>
+<?php $blockInstance = $block->getLayout()->createBlock('Infosys\OrderView\Block\Tracking\Popup'); ?>
+<?php $_shipment = $block->getShipment() ?>
+<?php
+/* @var \Magento\Sales\Model\Order $_order */
+$_order = $block->getOrder() ?>
+<?php if ($_shipment && $_order) : ?>
+    <?php $trackCollection = $_order->getTracksCollection()->addFieldToFilter('parent_id', $_shipment->getId()); ?>
+    <?php if (!empty($trackCollection->getData())) : ?>
+        <br />
+        <table class="shipment-track">
+            <thead>
+            <tr>
+                <th><?= $block->escapeHtml(__('Shipped By')) ?></th>
+                <th><?= $block->escapeHtml(__('Tracking Number')) ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($trackCollection as $_item) : ?>
+                <?php if($_item->getParentId() === $_shipment->getId()): ?>
+                <tr>
+                    <td><?= $block->escapeHtml($_item->getTitle()) ?>:</td>
+                    <td>
+                    <?php if (strtolower($_item->getCarrierCode()) == 'dhl') : ?>
+                        <a href="<?= $blockInstance->getShipmentTrackingLink($_item->getCarrierCode(), $_item->getNumber()) ?>" target="_blank">
+                            <?= $block->escapeHtml($_item->getNumber()) ?>
+                        </a>
+                    <?php elseif (strtolower($_item->getCarrierCode()) == 'fedex') : ?>
+                        <a href="<?= $blockInstance->getShipmentTrackingLink($_item->getCarrierCode(), $_item->getNumber()) ?>" target="_blank">
+                            <?= $block->escapeHtml($_item->getNumber()) ?>
+                        </a>
+                    <?php elseif (strtolower($_item->getCarrierCode()) == 'ups') : ?>
+                        <a href="<?= $blockInstance->getShipmentTrackingLink($_item->getCarrierCode(), $_item->getNumber()) ?>" target="_blank">
+                            <?= $block->escapeHtml($_item->getNumber()) ?>
+                        </a>
+                    <?php elseif (strtolower($_item->getCarrierCode()) == 'usps') : ?>
+                        <a href="<?= $blockInstance->getShipmentTrackingLink($_item->getCarrierCode(), $_item->getNumber()) ?>" target="_blank">
+                            <?= $block->escapeHtml($_item->getNumber()) ?>
+                        </a>
+                    <?php else : ?>
+                        <?= $block->escapeHtml($_item->getNumber()) ?>
+                    <?php endif; ?>
+                    </td>
+                </tr>
+                <?php endif; ?>
+            <?php endforeach ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
+<?php endif; ?>

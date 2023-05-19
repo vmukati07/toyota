@@ -1,0 +1,20 @@
+{
+    "name": "infosys/module-direct-fulfillment",
+    "description": "Module for direct fulfillment",
+    "type": "magento2-module",
+    "license": [
+        "Proprietary"
+    ],
+    "version": "1.0.0",
+    "require": {
+        "magento/module-directory": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Infosys\\DirectFulFillment\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "xtento_orderexport_destination": {
+        "column": {
+            "encrypt_file": true,
+            "encryption_protocol": true,
+            "enc_public_key": true
+        }
+    }
+}

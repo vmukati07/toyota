@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   Infosys/DeliveryFee
+ * @version   1.0.0
+ * @author    Infosys Limited
+ * @copyright Copyright © 2022. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <delivery_fee_global>
+            <global>
+                <enabled>0</enabled>
+                <state_fees>{}</state_fees>
+                <logging_enabled>0</logging_enabled>
+                <available_for_returns>0</available_for_returns>
+            </global>
+        </delivery_fee_global>
+
+        <delivery_fee_website>
+            <global>
+                <enabled>0</enabled>
+                <enabled_states>[]</enabled_states>
+                <available_for_returns_store>0</available_for_returns_store>
+            </global>
+        </delivery_fee_website>
+    </default>
+</config>

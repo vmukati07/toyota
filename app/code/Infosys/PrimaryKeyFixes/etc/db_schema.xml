@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/PrimaryKeyFixes
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="catalog_product_entity_decimal">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_varchar">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_text">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_gallery">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_datetime">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_media_gallery_value_video">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_link_attribute_decimal">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_media_gallery">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_bundle_option_value">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_int">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_media_gallery_value_to_entity">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_link_attribute_int">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_media_gallery_value">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_link_attribute_varchar">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_super_attribute_label">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_product_entity_tier_price">
+        <column xsi:type="bigint" name="value_id" unsigned="true" comment="Value ID"/>
+    </table>
+    <table name="catalog_category_product_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="vehicle_indexer_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="catalogrule_product_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="targetrule_product_rule_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="targetrule_rule_product_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="inventory_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="product_vehicle_facets_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="catalog_product_price_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="salesrule_rule_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="cataloginventory_stock_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="catalog_product_attribute_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="catalogrule_rule_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="customer_dummy_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="product_vehicle_fitment_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="design_config_dummy_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="catalogsearch_fulltext_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="catalog_product_category_cl">
+        <column xsi:type="bigint" name="version_id" unsigned="true" identity="true" comment="Version ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="version_id"/>
+        </constraint>
+
+    </table>
+    <table name="mview_state">
+        <column xsi:type="bigint" name="version_id" unsigned="true" comment="View Version ID"/>
+    </table>
+</schema>

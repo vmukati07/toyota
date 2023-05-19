@@ -1,0 +1,17 @@
+{
+    "quote": {
+        "column": {
+            "delivery_fee": true
+        }
+    },
+    "sales_order": {
+        "column": {
+            "delivery_fee": true
+        }
+    },
+    "sales_creditmemo": {
+        "column": {
+            "delivery_fee": true
+        }
+    }
+}

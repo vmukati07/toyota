@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!-- /**
+ * @package     Infosys/DealerChanges
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */ -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Rma\Helper\Eav" type="Infosys\DealerChanges\Helper\Eav" />
+    <preference for="Fastly\Cdn\Block\Dashboard\Grids" type="Infosys\DealerChanges\Block\Dashboard\Grids"/>
+    <preference for="Yotpo\Yotpo\Plugin\Backend\Block\Dashboard\Grids" type="Infosys\DealerChanges\Plugin\Backend\Block\Dashboard\Grids"/>
+</config>

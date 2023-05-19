@@ -1,0 +1,8 @@
+<!--@subject {{trans "New EPC Category Detected"}} @-->
+{{template config_path="design/email/header_template"}}
+{{trans "New categories and products were found in the EPC feed:"}}<br><br>
+
+{{trans "Category name = "}}{{var category_name}}<br>
+{{trans "Category URL = "}}<a href="{{var category_url}}">{{var category_url}}</a><br>
+
+{{template config_path="design/email/footer_template"}}

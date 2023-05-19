@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/PaymentConfigGraphQL
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="paymentconfig" translate="label" sortOrder="130" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Stripe Payment Configuration</label>
+            <tab>toyota</tab>
+            <resource>Infosys_PaymentConfigGraphQL::stripe_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="enable_graphql_v1" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable GraphQL V1</label>
+                    <comment>
+                        <![CDATA[Enable or disable the old endpoint for stripe payment config.]]>
+                    </comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

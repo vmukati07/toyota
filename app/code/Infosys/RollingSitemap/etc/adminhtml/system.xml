@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Infosys/RollingSitemap
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2022. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="sitemap">
+            <group id="generate">
+                <field id="frequency" showInDefault="0" showInWebsite="0" showInStore="0" />
+                <field id="time" showInDefault="0" showInWebsite="0" showInStore="0" />
+
+                <field id="rolling_cron_expr" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Rolling Cron Expression</label>
+                    <validate>required-entry validate-cron-expr</validate>
+                    <comment><![CDATA[
+                        This is part of the `Infosys_RollingSitemap` module; see the README.md for more information.
+                    ]]></comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

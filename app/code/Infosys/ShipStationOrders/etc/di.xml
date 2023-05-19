@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+ <!--
+/**
+ * @package     Infosys/ShipStationOrders
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Excluding store pickup orders & df,manually shipped items in shipstation -->
+    <preference for="Auctane\Api\Model\Action\Export" type="Infosys\ShipStationOrders\Model\Action\Export" />
+    <!-- Custom Logger to handle ShipStationOrders Module logs -->
+    <type name="Infosys\ShipStationOrders\Logger\ShipStationOrdersLogger">
+        <arguments>
+            <argument name="name" xsi:type="string">ShipStationOrdersLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Infosys\ShipStationOrders\Logger\ShipStationOrdersHandler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

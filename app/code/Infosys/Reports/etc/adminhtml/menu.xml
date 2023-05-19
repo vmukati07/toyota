@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   Infosys/Reports
+ * @version   1.0.0
+ * @author    Infosys Limited
+ * @copyright Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>        
+        <add id="Infosys_Reports::report_sales_performance" title="Sales Performance" translate="title" module="Infosys_Reports"
+             sortOrder="110" parent="Magento_Reports::report_salesroot" action="reports/mbi/"
+              target="_blank" resource="Infosys_Reports::report_sales_performance" />
+        <add id="Infosys_Reports::report_web_analytics" title="Web Analytics" translate="title" module="Infosys_Reports"
+             sortOrder="50" parent="Magento_Reports::report_marketing" action="reports/adobe/"
+             target="_blank" resource="Infosys_Reports::report_web_analytics" />       
+    </menu>
+</config> 

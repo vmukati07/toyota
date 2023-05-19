@@ -1,0 +1,48 @@
+type Mutation {
+    changeCustomerEmail(
+        input: changeCustomerEmailInput!
+        @doc(description: "An input object that contains changes related to the customer email.")
+        ): CustomerOutput
+        @resolver(class: "Infosys\\CustomerSSO\\Model\\Resolver\\UpdateCustomerResolver")
+        @doc(description: "Change Customer Email.")
+    updateCustomerPhoneNumber(
+            input: updateCustomerPhoneNumberInput!
+            @doc(description: "An input object that contains changes related to the customer phone number.")
+        ): CustomerOutput
+            @resolver(class: "Infosys\\CustomerSSO\\Model\\Resolver\\UpdateCustomerPhoneNoResolver")
+            @doc(description: "Update Customer Phone Number.")
+    activateCustomer(
+        activationCode: String @doc(description: "Activation code")
+    ): OutputData
+        @resolver(class: "Infosys\\CustomerSSO\\Model\\Resolver\\ActivateCustomerResolver")
+    validateCustomerPhone(
+        otpCode: String @doc(description: "phoneNumber otpCode")
+    ): Output
+        @resolver(class: "Infosys\\CustomerSSO\\Model\\Resolver\\VerifyPhoneResolver")
+}
+
+input changeCustomerEmailInput @doc(description: "Contains changes related to the customer email.") {
+    email: String! @doc(description: "User Email")
+    password: String! @doc(description: "User password")
+}
+
+input updateCustomerPhoneNumberInput @doc(description: "Contains changes related to the customer email.") {
+    phoneNumber: String! @doc(description: "User phoneNumber")
+    password: String! @doc(description: "User password")
+}     
+type CustomerOutput @doc(description: "update customer data response") {
+    message: String @doc(description: "Response Message")
+}
+
+
+input CustomerUpdateInput {
+    customer_password: String @doc(description: "User password")
+}
+
+type OutputData @doc(description: "activate customer response") {
+    message: String @doc(description: "Response Message")
+}
+
+type Output @doc(description: "update customer data response") {
+    message: String @doc(description: "Response Message")
+}

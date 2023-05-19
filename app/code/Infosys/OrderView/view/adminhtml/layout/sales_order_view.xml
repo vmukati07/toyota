@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/OrderView
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Infosys_OrderView::css/remove_orderview_whitespace.css"/>
+    </head>
+    <referenceBlock name="order_tab_info">
+        <action method="setTemplate">
+            <argument name="template" xsi:type="string">Infosys_OrderView::order/view/tab/info.phtml</argument>
+        </action>
+    </referenceBlock>
+    <referenceBlock name="order_info">
+        <action method="setTemplate">
+            <argument name="template" xsi:type="string">Infosys_OrderView::order/view/info.phtml</argument>
+        </action>
+    </referenceBlock>
+</page>

@@ -1,0 +1,45 @@
+<?php
+/**
+ * @package     Infosys/DeliveryFee
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2022. All Rights Reserved.
+ */
+?>
+
+<?php
+/** @var Infosys\DeliveryFee\Block\Adminhtml\Order\CreditMemo\Create\Adjustments $block */
+?>
+
+<?php
+$source = $block->getSource();
+$refundable = $block->isEligibleForReturn($source->getStoreId());
+?>
+
+<?php if ($source && $source->getDeliveryFee()): ?>
+	<tr>
+		<td class="label">
+			<?= $block->getDeliveryFeeLabel() ?>
+		</td>
+
+        <?php if ($refundable): ?>
+            <td>
+                <input type="text"
+                       name="creditmemo[delivery_fee_adjustments]"
+                       value="<?= $source->getDeliveryFee(); ?>"
+                       class="input-text admin__control-text not-negative-amount"
+                       id="delivery_fee_amount" />
+            </td>
+
+        <?php else: ?>
+            <td>
+                <input type="text"
+                       name="creditmemo[delivery_fee_adjustments]"
+                       value="0"
+                       class="input-text admin__control-text"
+                       id="delivery_fee_amount"
+                       disabled="disabled" />
+            </td>
+        <?php endif; ?>
+	</tr>
+<?php endif; ?>

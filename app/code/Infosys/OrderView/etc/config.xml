@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/OrderView
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <shipment_tracking_config>
+            <shipment_tracking_links>
+                <dhl>https://www.dhl.com/us-en/home/tracking.html?tracking-id=</dhl>
+                <fedex>https://www.fedex.com/fedextrack/?trknbr=</fedex>
+                <ups>http://wwwapps.ups.com/WebTracking/track?track=yes&amp;trackNums=</ups>
+                <usps>https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=</usps>
+            </shipment_tracking_links>
+        </shipment_tracking_config>
+    </default>
+</config>

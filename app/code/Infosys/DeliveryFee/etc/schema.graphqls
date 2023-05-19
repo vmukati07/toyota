@@ -1,0 +1,22 @@
+type CartPrices {
+    delivery_fees: [DeliveryFee]
+    @doc(description:"Applied delivery fee charge")
+    @resolver(class: "\\Infosys\\DeliveryFee\\Model\\Resolver\\DeliveryFeeCharge")
+}
+
+type CustomerOrder {
+    delivery_fees: [DeliveryFee]
+    @doc(description: "Order applied delivery fee charge")
+    @resolver(class:"\\Infosys\\DeliveryFee\\Model\\Resolver\\Order\\DeliveryFeeCharge")
+}
+
+type OrderSuccessDetail {
+    delivery_fees: [DeliveryFee]
+    @doc(description: "Order applied delivery fee charge")
+    @resolver(class:"\\Infosys\\DeliveryFee\\Model\\Resolver\\Order\\DeliveryFeeCharge")
+}
+
+type DeliveryFee {
+    amount: Money!
+    label: String!
+}

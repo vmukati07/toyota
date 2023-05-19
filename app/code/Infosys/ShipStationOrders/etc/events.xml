@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/ShipStationOrders
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- Order place after event to set store pickup flag value on orders -->
+    <event name="sales_order_place_after">
+        <observer name="place_order_after" instance="Infosys\ShipStationOrders\Observer\OrderPlaceAfter"/>
+    </event>
+</config>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/DirectFulFillment
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright � 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="orderemail_config" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="40" translate="label">
+            <label>Order Email Configuration</label>
+            <tab>toyota</tab>
+            <resource>Infosys_OrderEmailTemplates::orderemail_template</resource>
+            <group id="oetemplate_config" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Logs </label>
+                <field id="enable" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" type="select">
+                    <label>Enable/Disable Logs</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

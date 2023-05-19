@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/XtentoProductExport
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="xtento_productexport_profile">
+        <column xsi:type="tinyint" name="export_filter_include_in_feed" nullable="false" default="0" comment="Export filter: Include in feed"/>
+        <column xsi:type="tinyint" name="export_filter_product_feed_image" nullable="false" default="0" comment="Export filter: Product Feed Image Filter"/>
+    </table>
+</schema>

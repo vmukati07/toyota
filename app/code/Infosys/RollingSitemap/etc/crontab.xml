@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/RollingSitemap
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2022. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="sitemap_generate" instance="Infosys\RollingSitemap\Rewrite\Magento\Sitemap\Model\Observer" method="scheduledGenerateSitemaps">
+            <config_path>sitemap/generate/rolling_cron_expr</config_path>
+        </job>
+    </group>
+</config>

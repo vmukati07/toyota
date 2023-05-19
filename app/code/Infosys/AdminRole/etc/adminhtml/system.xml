@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/AdminRole
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- Adding website mapping field in sso admin login -->
+        <section id="pitbulk_saml2_admin" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <group id="attr_mapping" translate="label comment" type="text" sortOrder="5" showInDefault="1"
+                   showInWebsite="0" showInStore="0">
+                <field id="website_ids" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Website</label>
+                </field>
+                <field id="region_code" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Region</label>
+                </field>
+                <field id="corporate_region_code" translate="label" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Corporate Region</label>
+                </field>
+                <field id="admin_role_code" translate="label" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Admin Role Code</label>
+                    <comment>
+                        <![CDATA[admin role to map all website permission]]>
+                    </comment>
+                </field>
+            </group>
+            <group id="debug" translate="label" sortOrder="40" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Debug</label>
+                <field id="enable_logging" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Enable Dealer Login Logs</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="simulator_enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0" >
+                    <label>Enable Simulation Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[
+                        For Testing Locally to Simulate different SSO Responses
+                        This will only work in developer mode.  See README for more details
+                        ]]>
+                        </comment>
+                </field>
+                <field id="simulator_response" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="0" canRestore="1"
+                       showInStore="0">
+                    <label>SAML Response Override Base64</label>
+                    <comment>
+                        <![CDATA[
+                        See README for more details on SSO XML And Base64 encoding
+                        ]]>
+                    </comment>
+                </field>
+            </group>
+            <group id="options">
+                <field id="corporate_role_id" translate="label comment" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Role ID for PCO eCommerce Corporate</label>
+                    <comment>
+                        <![CDATA[This is the Adobe Commerce internal Role ID.  Used for custom logic to assign role.]]>
+                    </comment>
+                </field>
+                <field id="region_role_id" translate="label comment" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Role ID for PCO eCommerce Region</label>
+                    <comment>
+                        <![CDATA[This is the Adobe Commerce internal Role ID.  Used for custom logic to assign role.]]>
+                    </comment>
+                </field>
+                <field id="dealer_program_manager_role_id" translate="label comment" type="text" sortOrder="5"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Role ID for PCO eCommerce Dealer Program Manager</label>
+                    <comment>
+                        <![CDATA[This is the Adobe Commerce internal Role ID.  Used for custom logic to assign role.]]>
+                    </comment>
+                </field>
+                <field id="dealer_order_processing_role_id" translate="label comment" type="text" sortOrder="5"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Role ID for PCO eCommerce Dealer Order Processing</label>
+                    <comment>
+                        <![CDATA[This is the Adobe Commerce internal Role ID.  Used for custom logic to assign role.]]>
+                    </comment>
+                </field>
+                <field id="enable_two_factor" translate="label comment" type="select" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="110">
+                    <label>Enable 2FA</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When No, will not require user to enter in two-factor authentication to admin login.</comment>
+                </field>
+                <field id="bypass_two_factor" translate="label comment" type="select" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="120">
+                    <label>Bypass Two-Factor Authentication</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When yes, will not require user to enter in two-factor authentication to login when they log in via SSO.</comment>
+                </field>                
+            </group>
+        </section>
+    </system>
+</config>

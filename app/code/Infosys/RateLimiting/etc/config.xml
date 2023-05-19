@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   Infosys/RateLimiting
+ * @version   1.0.0
+ * @author    Infosys Limited
+ * @copyright Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <system>
+            <full_page_cache>
+                <fastly>
+                    <fastly_rate_limiting_settings>
+                        <path_protection>
+                            <protected_path_cached>1</protected_path_cached>
+                        </path_protection>
+                    </fastly_rate_limiting_settings>
+                </fastly>
+            </full_page_cache>
+        </system>
+    </default>
+</config>

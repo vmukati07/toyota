@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Infosys_XtentoPdfCustomizer
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Create prefrence for override the template in custom module -->
+    <preference for="Xtento\PdfCustomizer\Model\Files\TemplateReader" type="Infosys\XtentoPdfCustomizer\Model\Files\TemplateReader" />
+    <!-- Create prefrence for override the totals array in custom print order template -->
+    <preference for="Xtento\PdfCustomizer\Helper\Variable\Processors\Totals" type="Infosys\XtentoPdfCustomizer\Model\Variable\Processors\Totals" />
+    <!-- Create prefrence for override the items fitment data for each item in custom print order template -->
+    <preference for="Xtento\PdfCustomizer\Helper\Variable\Processors\Items" type="Infosys\XtentoPdfCustomizer\Model\Variable\Processors\Items" />
+    <!-- Create prefrence to format the telephone number for Pdf -->
+    <preference for="Xtento\PdfCustomizer\Helper\Variable\Processors\Pdf" type="Infosys\XtentoPdfCustomizer\Model\Variable\Processors\Pdf" />
+    <!-- Create prefrence to remove the permission error while generate Pdf -->
+    <preference for="Xtento\PdfCustomizer\Helper\GeneratePdf" type="Infosys\XtentoPdfCustomizer\Model\GeneratePdf" />
+</config>

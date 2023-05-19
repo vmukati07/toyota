@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Infosys/AemBase
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\Url">
+		<plugin disabled="false" name="Infosys_AemBase_Plugin_Magento_Framework_Url" sortOrder="10" type="Infosys\AemBase\Plugin\Magento\Framework\Url"/>
+	</type>
+
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="Infosys_AemBase_GenerateSitemaps" xsi:type="object">Infosys\AemBase\Console\Command\GenerateSitemaps</item>
+				<item name="Infosys_AemBase_ShowMissingSitemaps" xsi:type="object">Infosys\AemBase\Console\Command\ShowMissingSitemaps</item>
+				<item name="Infosys_AemBase_ShowMissingAemPublishDomains" xsi:type="object">Infosys\AemBase\Console\Command\ShowMissingAemPublishDomains</item>
+			</argument>
+		</arguments>
+	</type>
+
+    <type name="Magento\Catalog\Model\Product\Url">
+        <plugin disabled="false" name="Infosys_AemBase_Plugin_Magento_Catalog_Model_Product_Url"
+				sortOrder="10"
+				type="Infosys\AemBase\Plugin\Product\Url"/>
+    </type>
+
+	<type name="Infosys\AemBase\Console\Command\ShowMissingSitemaps">
+		<arguments>
+			<argument xsi:type="string" name="name">infosys:aembase:show-missing-sitemaps</argument>
+		</arguments>
+	</type>
+
+	<type name="Infosys\AemBase\Console\Command\GenerateSitemaps">
+		<arguments>
+			<argument xsi:type="string" name="name">infosys:aembase:generate-sitemaps</argument>
+		</arguments>
+	</type>
+
+	<type name="Infosys\AemBase\Console\Command\ShowMissingAemPublishDomains">
+		<arguments>
+			<argument xsi:type="string" name="name">infosys:aembase:show-missing-domains</argument>
+		</arguments>
+	</type>
+
+    <!-- Sitemap Customizations -->
+    <type name="Infosys\AemBase\Rewrite\Magento\Sitemap\Model\ResourceModel\Catalog\Product">
+		<plugin disabled="false" name="Infosys_AemBase_Plugin_Magento_Sitemap_Model_ResourceModel_Catalog_Product" sortOrder="10" type="Infosys\AemBase\Plugin\Magento\Sitemap\Model\ResourceModel\Catalog\Product"/>
+	</type>
+
+	<type name="Magento\Sitemap\Model\ResourceModel\Catalog\Category">
+		<plugin disabled="false" name="Infosys_AemBase_Plugin_Magento_Sitemap_Model_ResourceModel_Catalog_Category" sortOrder="10" type="Infosys\AemBase\Plugin\Magento\Sitemap\Model\ResourceModel\Catalog\Category"/>
+	</type>
+
+	<type name="Magento\Sitemap\Model\ItemProvider\CmsPage">
+		<plugin disabled="false" name="Infosys_AemBase_Plugin_Magento_Sitemap_Model_ItemProvider_CmsPage" sortOrder="10" type="Infosys\AemBase\Plugin\Magento\Sitemap\Model\ItemProvider\CmsPage"/>
+	</type>
+
+	<!-- Couldn't avoid a preference here because one of the functions are protected -->
+	<preference for="Magento\Sitemap\Model\Sitemap" type="Infosys\AemBase\Rewrite\Magento\Sitemap\Model\Sitemap"/>
+
+	<preference for="Magento\Sitemap\Model\ResourceModel\Catalog\Product"
+				type="Infosys\AemBase\Rewrite\Magento\Sitemap\Model\ResourceModel\Catalog\Product" />
+	
+	<type name="Magento\Variable\Model\Source\Variables">
+        <arguments>
+            <argument name="configPaths" xsi:type="array">
+                <item name="aem_general_config/general" xsi:type="array">
+                    <item name="aem_general_config/general/aem_path" xsi:type="string">1</item>
+					<item name="aem_general_config/general/aem_customer_account_path" xsi:type="string">1</item>
+					<item name="aem_general_config/general/aem_domain" xsi:type="string">1</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

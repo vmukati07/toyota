@@ -1,0 +1,11 @@
+type Query {
+    suggest (
+       query : String @doc(description: "Search query")
+    ) : SearchTermsCollection
+    @resolver(class: "Infosys\\SearchTerm\\Model\\Resolver\\SearchTerms")
+    @cache(cacheIdentity:"Infosys\\SearchTerm\\Model\\Resolver\\Identity")
+}
+
+type SearchTermsCollection @doc(description: "An Array of Search Terms") {
+    search_terms: [String]
+}

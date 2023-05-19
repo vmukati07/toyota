@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Infosys/RollingSitemap
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2022. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <sitemap>
+            <generate>
+                <rolling_cron_expr>*/10 * * * *</rolling_cron_expr>
+            </generate>
+        </sitemap>
+    </default>
+</config>

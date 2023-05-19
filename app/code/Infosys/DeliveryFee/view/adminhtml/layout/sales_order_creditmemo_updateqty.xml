@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/DeliveryFee
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2022. All Rights Reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="sales_order_item_price"/>
+
+    <body>
+        <referenceBlock name="creditmemo_totals">
+            <block class="Infosys\DeliveryFee\Block\Adminhtml\Order\CreditMemo\Create\Adjustments"
+                   name="delivery_fee_adjustments"
+                   template="Infosys_DeliveryFee::order/creditmemo/create/totals/adjustments.phtml" />
+        </referenceBlock>
+    </body>
+</page>

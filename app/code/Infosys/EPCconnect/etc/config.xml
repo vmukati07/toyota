@@ -1,0 +1,26 @@
+<!--
+/**
+ * @package     Infosys/EPCconnect
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+        <default>
+            <epcconnect>
+                <enable_product_import_methods>
+                    <enable_canonical_urlrewrite_generate>0</enable_canonical_urlrewrite_generate>
+                </enable_product_import_methods>
+                <category_detect_during_import>
+                    <recipient_email>toyotapartscenteronline@toyota.com</recipient_email>
+                </category_detect_during_import>
+            </epcconnect>
+            <epcconnect_hideaap>
+                <epcconnect_hide_aap>
+                    <hide_aap_products>1</hide_aap_products>
+                </epcconnect_hide_aap>
+            </epcconnect_hideaap>
+        </default>
+</config>

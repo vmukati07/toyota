@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   Infosys/OrderView
+ * @version   1.0.0
+ * @author    Infosys Limited
+ * @copyright Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+        <preference for="Magento\Sales\Block\Adminhtml\Order\View\Info" type="Infosys\OrderView\Block\Adminhtml\Order\View\Info" />
+        <!-- Removing shipstation carrier from the dropdown in shipment page -->
+        <type name="Magento\Shipping\Block\Adminhtml\Order\Tracking">
+                <plugin name="removing_shipstation_carrier" type="Infosys\OrderView\Plugin\Block\Adminhtml\Order\Tracking" sortOrder="1"/>
+        </type>
+</config>

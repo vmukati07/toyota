@@ -1,0 +1,18 @@
+<!--
+/**
+ * @package     Infosys/PaymentConfigGraphQL
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+        <default>
+            <paymentconfig>
+                <general>
+                    <enable_graphql_v1>1</enable_graphql_v1>
+                </general>
+            </paymentconfig>
+        </default>
+</config>

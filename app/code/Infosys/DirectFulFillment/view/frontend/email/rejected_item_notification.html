@@ -1,0 +1,27 @@
+<!--
+/**
+ * @package     Infosys/DirectFulFillment
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<!--@subject {{trans "Direct Fulfillment Order %df_status - " df_status=$df_status}}{{trans "%order_number" order_number=$order_number}} @-->
+<!--@vars {
+    "var order_number":"Order Number",
+    "var sku":"Ordered Sku",
+    "var quantity":"Ordered Quantity",
+    "var df_status":"Direct FulFillment Status",
+    "var reason":"ACK Reason"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<p>{{trans "The following product has been %status for PDC Direct Fulfillment." status=$df_status}}
+    {{trans "Please ship this product from the dealership to the customer."}}</p>
+
+<p><strong>{{trans "Order :"}} </strong> {{var order_number}}</p>
+<p><strong>{{trans "Part Number :"}} </strong> {{var sku}}</p>
+<p><strong>{{trans "Quantity :"}} </strong> {{var quantity}}</p>
+<p><strong>{{trans "Reason :"}}</strong> {{var reason}}</p>
+
+{{template config_path="design/email/footer_template"}}

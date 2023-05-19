@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Infosys/OrderEmailTemplates
+ * @version     1.0.0
+ * @author      Infosys Limited
+ * @copyright   Copyright © 2021. All Rights Reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="email_order_set_template_vars_before">
+        <observer name="order_email_template_variable_set" instance="Infosys\OrderEmailTemplates\Observer\OrderEmailTemplateVariables" />
+    </event>
+    <event name="email_shipment_set_template_vars_before">
+        <observer name="shipment_email_template_variable_set" instance="Infosys\OrderEmailTemplates\Observer\OrderEmailTemplateVariables" />
+    </event>
+	<event name="email_invoice_set_template_vars_before">
+        <observer name="invoice_email_template_variable_set" instance="Infosys\OrderEmailTemplates\Observer\OrderEmailTemplateVariables" />
+    </event>
+	<event name="email_creditmemo_set_template_vars_before">
+        <observer name="creditmemo_email_template_variable_set" instance="Infosys\OrderEmailTemplates\Observer\CreditmemoEmailTemplateVariables" />
+    </event>
+    <event name="email_ready_for_pickup_set_template_vars_before">
+        <observer name="email_ready_for_pickup_template_variable_set" instance="Infosys\OrderEmailTemplates\Observer\OrderEmailTemplateVariables" />
+    </event>
+    <event name="email_order_comment_set_template_vars_before">
+        <observer name="email_order_update_template_variable_set" instance="Infosys\OrderEmailTemplates\Observer\OrderEmailTemplateVariables" />
+    </event>
+    <event name="email_invoice_comment_set_template_vars_before">
+        <observer name="invoice_comment_email_template_variable_set" instance="Infosys\OrderEmailTemplates\Observer\OrderEmailTemplateVariables" />
+    </event>
+    <event name="email_shipment_comment_set_template_vars_before">
+        <observer name="shipment_comment_email_template_variable_set" instance="Infosys\OrderEmailTemplates\Observer\OrderEmailTemplateVariables" />
+    </event>
+    <event name="email_creditmemo_comment_set_template_vars_before">
+        <observer name="creditmemo`_comment_email_template_variable_set" instance="Infosys\OrderEmailTemplates\Observer\OrderEmailTemplateVariables" />
+    </event>
+</config>
